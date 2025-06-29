@@ -17,7 +17,7 @@
   align-items: center;
   font-family: var(--main-font-family);
   font-size: var(--base-font-size);
-  background-color: #e7e7e7;
+  background-color: #fff;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--font-weight-regular);
