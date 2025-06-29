@@ -1,1 +1,45 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Типографика */
+  --main-font-family: 'Inter-Variable', sans-serif;
+  --accent-font-family: 'Press Start 2P', fantasy;
+  
+  /* Веса шрифтов */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  
+  /* Цвета */
+  --text-primary-color: #000;
+  --block-background-color: #fff;
+  --text-stroke-color: #fff;
+  --button-text-color: #fff;
+  --heart-contour-color: black;
+  --heart-active-color: red;
+  
+  /* Размеры шрифтов */
+  --base-font-size: 18px;
+  --button-font-size: 14px;
+  --image-label-font-size: 14px;
+  --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-title-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  
+  /* Размеры контейнеров */
+  --content-max-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --header-padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  
+  /* Границы и линии */
+  --element-border: 2px solid currentColor;
+  --button-line-height: 90%;
+  
+  /* Фоновое изображение */
+  --page-background: 
+    repeating-linear-gradient(to right, #d3d3d3,#d3d3d3 2px, transparent 2px,transparent 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3,#d3d3d3 2px, transparent 2px,transparent 4px),
+    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-max-width: 100%;
+  }
+}
