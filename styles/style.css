@@ -198,7 +198,7 @@
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
   background: var(--block-background-color);
-  transition: all 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .action-btn:hover {
