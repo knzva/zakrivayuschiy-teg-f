@@ -21,9 +21,12 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--font-weight-regular);
+  background-image: var(--page-background);
+  background-size: 100% 960px;
+  background-repeat: no-repeat;
 }
 
-.page::before {
+/* .page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -33,7 +36,7 @@
   background-image: var(--page-background);
   background-size: cover;
   z-index: -1;
-}
+}*/
 
 .themed-block {
   position: relative;
@@ -96,6 +99,7 @@
 
 .post-card__media {
   position: relative;
+  border-bottom: var(--element-border);
 }
 
 .post-card__photo {
@@ -104,7 +108,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  border-bottom: var(--element-border);
 }
 
 .post-card__photo_bright {
@@ -195,11 +198,17 @@
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
   background: var(--block-background-color);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .action-btn:hover {
   cursor: pointer;
+}
+
+.action-btn:hover > svg {
+  stroke: #fff;
+  stroke-width: 2px;
+  mix-blend-mode: difference;
 }
 
 .action-btn::before {
@@ -226,12 +235,17 @@
 }
 
 .card__icon-button {
-  height: 34px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 38px;
+  border: 2px solid transparent;
   padding: 0;
-  outline: 2px solid transparent;
   background: transparent;
-  transition: outline-color 0.3s ease;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .card__icon-button:focus {
@@ -239,26 +253,19 @@
 }
 
 .card__icon-button:focus-visible {
-  outline-color: currentColor;
-}
-
-.card__icon-button:focus-visible .like-icon {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-  transition: 0.3s ease;
+  border-color: currentColor;
 }
 
 .like-icon {
-  display: block;
-  width: 39px;
-  height: 30px;
-  cursor: pointer;
+  width: 27px;
+  height: 24px;
 }
 
 .card__like-button {
-  align-self: flex-end;
-  padding-block: 10.5px;
+  height: 38px;
+  padding-block: 9.5px;
   min-inline-size: 130px;
+  box-sizing: border-box;
 }
 
 .heart__core {
@@ -340,14 +347,18 @@
   padding-inline-start: 19px;
   padding-inline-end: 17px;
   padding-block: 16px;
+  transition: stroke 0.5s ease-in-out;
+  mix-blend-mode: normal;
 }
 
 .action-btn__icon {
+  display: block;
   position: relative;
+  color: #fff;
   z-index: 1;
   width: 21px;
   height: 21px;
-  color: white;
+  fill: currentColor;
 }
 
 .save-dialog[open] {
@@ -360,6 +371,9 @@
   min-inline-size: 341px;
   max-inline-size: 353px;
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  height: 191px;
+  align-items: center;
+  justify-content: center;
 }
 
 dialog::backdrop {
@@ -369,13 +383,14 @@ dialog::backdrop {
 .save-dialog__body {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 
 .save-dialog__icon {
   flex-shrink: 0;
   width: 39px;
   height: 39px;
+  margin-bottom: 25px;
 }
 
 .save-dialog__message {
@@ -385,6 +400,9 @@ dialog::backdrop {
   font-size: var(--button-font-size);
   line-height: 150%;
   text-transform: uppercase;
+  white-space: pre-line;
+  padding-bottom: 30px;
+  max-width: 200px;
 }
 
 .save-dialog__confirm {
