@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  max-width: 696px;
 }
 
 .content-area__grid {
@@ -365,24 +366,13 @@
 .save-dialog[open] {
   display: flex;
   flex-direction: column;
-  /* gap: 30px; */
-  border: 2px solid #000;
   padding: 30px;
-  /* padding-inline: 30px; */
-  /* padding-block: 30px; */
-  /* min-inline-size: 341px; */
-  /* max-inline-size: 353px; */
-  /* inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem); */
-  /* height: 191px; */
-  /* align-items: center;
-  justify-content: center; */
-  overflow: hidden;
-  scrollbar-width: none;
+  gap: 30px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background: #fff;
+  margin: auto;
 }
-
-.save-dialog[open]::-webkit-scrollbar {
-   width: 0;
-  }
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
@@ -391,7 +381,7 @@ dialog::backdrop {
 .save-dialog__body {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   max-width: 293px;
 }
 
@@ -443,6 +433,14 @@ dialog::backdrop {
   }
 
   .save-dialog[open] {
-    padding-inline: 42px;
+    margin-inline: 17px;
+    padding-inline-start: 42px;
+    padding-inline-end: 42px;
+    min-width: calc(100% - 32px);
   }
+
+ 
+  /* .save-dialog__body { */
+    /* gap: 12px; */
+
 }
